@@ -9,10 +9,9 @@ if __name__ == '__main__':
 
     minefield.draw_minefield()
 
-    sweeper = Sweeper()
+    sweeper = Sweeper(minefield)
 
     for mine in minefield.mines:
         print(mine)
 
-    sweeper.sweep_tile(minefield, x_coordinate=4, y_coordinate=3)
-
+    sweeper.main_menu()

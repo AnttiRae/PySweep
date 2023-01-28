@@ -19,7 +19,7 @@ class Minefield:
             self.mines.append(Mine(coordinates))
 
     def draw_minefield(self):
-        print('* | A B C D E F G H ')
+        print('  | 0 1 2 3 4 5 6 7 ')
         for i in range(self.width):
             print(i, end=' | ')
 
