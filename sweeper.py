@@ -36,8 +36,8 @@ class Sweeper:
                 x_coordinate = int(coordinates[0])
                 y_coordinate = int(coordinates[1])
                 if len(coordinates) > 2:
-                    raise Exception
-            except Exception:
+                    raise ValueError
+            except (ValueError, IndexError):
                 print("Inputted coordinates invalid, try again!")
                 continue
             else:

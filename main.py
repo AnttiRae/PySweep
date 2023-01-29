@@ -5,13 +5,14 @@ from sweeper import Sweeper
 if __name__ == '__main__':
     minefield = Minefield()
 
+    minefield.generate_tiles()
     minefield.place_mines()
 
-    minefield.draw_minefield()
+    # minefield.draw_minefield()
 
     sweeper = Sweeper(minefield)
 
-    for mine in minefield.mines:
-        print(mine)
+    for tile in minefield.tiles:
+        print(tile)
 
-    sweeper.main_menu()
+    # sweeper.main_menu()
