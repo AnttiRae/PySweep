@@ -12,9 +12,12 @@ class Tile:
             return f'Mine: {self.coordinates}'
         return f'Tile: {self.coordinates}'
 
+    def pop_tile(self):
+        self.popped = True
+
     def calculate_tile_number(self, minefield):
-        # if not self.popped:
-        #     return '#'
+        if not self.popped:
+            return '#'
         if self.mine:
             return 'X'
         number_of_mines = 0

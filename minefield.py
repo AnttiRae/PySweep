@@ -12,6 +12,7 @@ class Minefield:
         self.number_of_mines = number_of_mines
 
     def generate_tiles(self):
+        self.tiles = []
         for i in range(self.width):
             for j in range(self.height):
                 self.tiles.append(Tile([i, j]))
@@ -30,4 +31,5 @@ class Minefield:
                 print(f' {tile.calculate_tile_number(self)} ')
             else:
                 print(f' {tile.calculate_tile_number(self)} ', end='')
+
 
