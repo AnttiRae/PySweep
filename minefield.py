@@ -13,9 +13,7 @@ class Minefield:
 
     def generate_tiles(self):
         for i in range(self.width):
-            print('generating row of tiles')
             for j in range(self.height):
-                print('generating tile')
                 self.tiles.append(Tile([i, j]))
 
     # place X amount of mines on field on random locations
@@ -27,10 +25,9 @@ class Minefield:
             tile.mine = True
 
     def draw_minefield(self):
-        print('  | 0 1 2 3 4 5 6 7 ')
-        for i in range(self.width):
-            print(i, end=' | ')
+        for tile in self.tiles:
+            if tile.coordinates[1] == self.width-1:
+                print(f' {tile.calculate_tile_number(self)} ')
+            else:
+                print(f' {tile.calculate_tile_number(self)} ', end='')
 
-            for j in range(self.height):
-                print('#', end=' ')
-            print()
