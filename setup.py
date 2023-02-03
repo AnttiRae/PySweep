@@ -4,6 +4,7 @@ setup(
     name='pysweep',
     version='0.1.0',
     description='Simple minesweeper game for the terminal',
+    long_description='Simple minesweeper game for the terminal',
     url='https://github.com/AnttiRae/PySweep',
     author='Antti rae',
     author_email='anttiraework@gmail.com',
