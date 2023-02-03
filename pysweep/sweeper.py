@@ -1,4 +1,4 @@
-from minefield import Minefield
+from .minefield import Minefield
 import os
 
 

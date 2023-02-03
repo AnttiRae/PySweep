@@ -1,8 +1,8 @@
-from minefield import Minefield
-from sweeper import Sweeper
+from .minefield import Minefield
+from .sweeper import Sweeper
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+
+def main():
     minefield = Minefield(width=10, height=10, number_of_mines=10)
 
     minefield.generate_tiles()
@@ -10,3 +10,7 @@ if __name__ == '__main__':
 
     sweeper = Sweeper(minefield)
     sweeper.main_menu()
+
+
+if __name__ == "__main__":
+    main()
