@@ -7,6 +7,7 @@ def main():
 
     minefield.generate_tiles()
     minefield.place_mines()
+    minefield.calculate_tile_numbers()
 
     sweeper = Sweeper(minefield)
     sweeper.main_menu()

@@ -1,4 +1,5 @@
 from .tile import Tile
+from .colors import bcolors
 import random
 
 
@@ -25,11 +26,23 @@ class Minefield:
         for tile in tiles_to_mine:
             tile.mine = True
 
+    def calculate_tile_numbers(self):
+        for tile in self.tiles:
+            tile.calculate_tile_number(self)
+
     def draw_minefield(self):
         for tile in self.tiles:
             if tile.coordinates[1] == self.width-1:
-                print(f' {tile.calculate_tile_number(self)} ')
+                print(f' {tile} ')
+            elif tile.coordinates[1] == 0:
+                print(f"{bcolors.FAIL}{tile.coordinates[0]}|{bcolors.ENDC}", end='')
+                print(f' {tile} ', end='')
             else:
-                print(f' {tile.calculate_tile_number(self)} ', end='')
+                print(f' {tile} ', end='')
+        print(f"{bcolors.FAIL}*|", end='')
+        for x in range(self.width):
+            print(f"-{x}-", end='')
+        print(f"{bcolors.ENDC}")
+
 
 

@@ -11,6 +11,17 @@ class Sweeper:
     # @staticmethod
     def sweep_tile(self, x_coordinate, y_coordinate):
         coordinates = [x_coordinate, y_coordinate]
+        tiles_to_find = [
+            [coordinates[0]+1, coordinates[1]],
+            [coordinates[0], coordinates[1]+1],
+            [coordinates[0]+1, coordinates[1]+1],
+            [coordinates[0]-1, coordinates[1]],
+            [coordinates[0], coordinates[1]-1],
+            [coordinates[0]-1, coordinates[1]-1],
+            [coordinates[0]+1, coordinates[1]-1],
+            [coordinates[0]-1, coordinates[1]+1],
+            [coordinates[0], coordinates[1]],
+        ]
         for tile in self.minefield.tiles:
             if coordinates == tile.coordinates:
                 tile.pop_tile()
@@ -18,6 +29,9 @@ class Sweeper:
                     print("Bang!")
                     self.game_over()
                     break
+            if tile.coordinates in tiles_to_find:
+                if tile.number == 0 and not tile.mine:
+                    tile.pop_tile()
         os.system('clear')
         self.minefield.draw_minefield()
         self.get_user_coordinate_input()
